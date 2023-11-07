@@ -104,8 +104,3 @@ while (next_page and total_pages < 3):
     result = run_query(json, headers)
     edges += result['data']['repository']['pullRequests']['edges']
     next_page = result["data"]["repository"]['pullRequests']["pageInfo"]["hasNextPage"]
-
-# # saving data
-# for node in nodes:
-#     with open("./repos.csv", 'a') as the_file:
-#         the_file.write(node['nameWithOwner'] + "; " + node['url'] + "\n")
