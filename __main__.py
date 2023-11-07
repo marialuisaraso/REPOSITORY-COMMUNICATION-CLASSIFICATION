@@ -10,7 +10,6 @@ import json
 load_dotenv(find_dotenv())
 
 mining = Mining(os.getenv("TOKEN"))
-print(json.dumps(mining.run_github_query(), sort_keys=True, indent=4))
 with open('Results.json', 'w') as arquivo:
     arquivo.write(json.dumps(mining.run_github_query(), sort_keys=True, indent=4))
     arquivo.close()
@@ -39,7 +38,7 @@ file_name = "Results.json"
 try:
     with open(file_name, "r") as json_file:
         data = json.load(json_file)
-        print("Dados do arquivo JSON foram lidos com sucesso.")
+        print("Dados da mineração, em JSON, lidos com sucesso.\n")
         print("MENU DE FERRAMENTAS ANÁLISE DE SENTIMENTOS PARA OS DADOS EXTRAÍDOS:")
         print("1- VADER")
         print("2- SENTISTRENGTH")

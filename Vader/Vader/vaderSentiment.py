@@ -535,9 +535,10 @@ def Vader():
 
     analyzer = SentimentIntensityAnalyzer()
 
-    for sentence in sentences:
-        vs = analyzer.polarity_scores(sentence)
-        print("{:-<65} {}".format(sentence, str(vs)))
+    with open("vaderOutput.txt", "w") as file:
+        for sentence in sentences:
+            vs = analyzer.polarity_scores(sentence)
+            file.write("{:-<65} {}\n".format(sentence, str(vs)))
     print("----------------------------------------------------")
     print(" - About the scoring: ")
     print("""  -- The 'compound' score is computed by summing the valence scores of each word in the lexicon, adjusted
@@ -549,7 +550,7 @@ def Vader():
      you want multidimensional measures of sentiment for a given sentence.""")
     print("----------------------------------------------------")
 
-    print("\n\n Demo Done!")
+    print("\n\n Resultados na análise de sentimentos colocados em vaderOutput.txt!")
 
 
 if __name__ == '__main__':

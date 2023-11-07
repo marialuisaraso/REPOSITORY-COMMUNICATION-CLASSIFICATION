@@ -1,0 +1,41 @@
+Code Problems shown only for recently changed lines, but not for old ones. {'neg': 0.134, 'neu': 0.866, 'pos': 0.0, 'compound': -0.2144}
+Need to update to 1.82 version but not able to------------------- {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+Staging changes-------------------------------------------------- {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+VS Code still crashes in Mac OS Sonoma, vscode 1.84.1------------ {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+Crash on save---------------------------------------------------- {'neg': 0.391, 'neu': 0.145, 'pos': 0.464, 'compound': 0.128}
+To be able to move installed extensions from a profile to another {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+Source control asks for SSH password twice----------------------- {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+color palette closes on click while toggeling to different color options (rgb/hsl/hex) {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+Add back "Open Next Editor" option (Bug 25596)------------------- {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+References view should respect enablePreview--------------------- {'neg': 0.0, 'neu': 0.563, 'pos': 0.437, 'compound': 0.4767}
+make platform less dependent on DOM types------------------------ {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+make platform less dependent on DOM types------------------------ {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+merge theme rules for css/less/scss variables-------------------- {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+merge theme rules for css/less/scss variables-------------------- {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+workaround layer breaker where dom-API is dependent on from common {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+workaround layer breaker where dom-API is dependent on from common {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+workaround https://github.com/microsoft/vscode/issues/197661----- {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+testing: implement proposed active profiles api------------------ {'neg': 0.0, 'neu': 0.649, 'pos': 0.351, 'compound': 0.4019}
+testing: implement proposed active profiles api------------------ {'neg': 0.0, 'neu': 0.649, 'pos': 0.351, 'compound': 0.4019}
+For https://github.com/microsoft/vscode/issues/193160------------ {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+move `onCommandExecuted` so it fires after command executed marker has been assigned {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+fire command executed once commandExecutedMarker has been assigned and the marker does not exist before command finished {'neg': 0.13, 'neu': 0.87, 'pos': 0.0, 'compound': -0.34}
+allow chat keybindings to be used by all------------------------- {'neg': 0.0, 'neu': 0.787, 'pos': 0.213, 'compound': 0.2263}
+allow keybindings to be used by all------------------------------ {'neg': 0.0, 'neu': 0.759, 'pos': 0.241, 'compound': 0.2263}
+`addNewLine` -> `shouldExecute`, expose this in quick fix API---- {'neg': 0.167, 'neu': 0.833, 'pos': 0.0, 'compound': -0.1531}
+adjust quick fix api--------------------------------------------- {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+resolve final newline regression for notebooks------------------- {'neg': 0.0, 'neu': 0.658, 'pos': 0.342, 'compound': 0.3818}
+resolve final newline regression for notebooks------------------- {'neg': 0.0, 'neu': 0.658, 'pos': 0.342, 'compound': 0.3818}
+fix width of composite bar--------------------------------------- {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+fix width of composite bar--------------------------------------- {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+terminal: allow the find widget to work in detached terminals---- {'neg': 0.132, 'neu': 0.702, 'pos': 0.167, 'compound': 0.1027}
+terminal: allow the find widget to work in detached terminals---- {'neg': 0.132, 'neu': 0.702, 'pos': 0.167, 'compound': 0.1027}
+- Abstracts some methods to an `IAnyTerminalInstance` interface that {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+is common between attached and detached terminal instances.------ {'neg': 0.176, 'neu': 0.824, 'pos': 0.0, 'compound': -0.128}
+- Some minor changes in the find contribution to make it work with {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+detached instances after that.----------------------------------- {'neg': 0.333, 'neu': 0.667, 'pos': 0.0, 'compound': -0.128}
+- Make the find widget track the `activeFindWidget` since commands {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+previously depended on the active terminal, which is not tracked for {'neg': 0.0, 'neu': 0.787, 'pos': 0.213, 'compound': 0.4019}
+detached terminals (the alternative would be making the active--- {'neg': 0.134, 'neu': 0.625, 'pos': 0.241, 'compound': 0.296}
+terminal instance tracker also track detached terminals)--------- {'neg': 0.2, 'neu': 0.8, 'pos': 0.0, 'compound': -0.128}
+And then it 'just works' in the test results terminal------------ {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
