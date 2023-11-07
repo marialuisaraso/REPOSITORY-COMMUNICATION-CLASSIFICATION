@@ -10,7 +10,7 @@ import json
 load_dotenv(find_dotenv())
 
 mining = Mining(os.getenv("TOKEN"))
-with open('Results.json', 'w') as arquivo:
+with open('MiningResults.json', 'w') as arquivo:
     arquivo.write(json.dumps(mining.run_github_query(), sort_keys=True, indent=4))
     arquivo.close()
 
@@ -32,7 +32,7 @@ def extract_fields(data):
     return items
 
 # Nome do arquivo JSON
-file_name = "Results.json"
+file_name = "MiningResults.json"
 
 # Tente abrir o arquivo e ler os dados
 try:
