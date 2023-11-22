@@ -19,7 +19,7 @@ query = """
 query github {
 
   repository(owner: "microsoft", name: "vscode") {
-            pullRequests(first: 10{AFTER}) {
+            pullRequests(first: 100{AFTER}) {
                 pageInfo {
                     hasNextPage
                     endCursor
@@ -101,6 +101,7 @@ while (next_page and total_pages < 3):
     cursor = result["data"]["repository"]['pullRequests']["pageInfo"]["endCursor"]
     next_query = query.replace("{AFTER}", ", after: \"%s\"" % cursor)
     json["query"] = next_query
+    # salvar
     result = run_query(json, headers)
     edges += result['data']['repository']['pullRequests']['edges']
     next_page = result["data"]["repository"]['pullRequests']["pageInfo"]["hasNextPage"]
