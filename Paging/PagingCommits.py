@@ -7,7 +7,7 @@ def get_commits(cursor=None):
     query = """
     query {
       repository(owner: "kamranahmedse", name: "developer-roadmap") {
-        ref(qualifiedName: "main") {
+        ref(qualifiedName: "master") {
           target {
             ... on Commit {
               history(first: 10, after: %s) {
