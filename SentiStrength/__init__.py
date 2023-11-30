@@ -1,7 +1,5 @@
 import subprocess
 import shlex
-import os.path
-import sys
 import pandas as pd
 from os import getcwd
 

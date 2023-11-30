@@ -1,6 +1,5 @@
 import setuptools
 
-
 setuptools.setup(
     name="sentistrength",
     version="0.0.9",

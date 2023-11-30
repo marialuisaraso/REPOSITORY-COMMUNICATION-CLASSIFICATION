@@ -6,7 +6,7 @@ headers = {'Authorization': 'Bearer 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'}
 def get_issues(cursor=None):
     query = """
     query {
-      repository(owner: "microsoft", name: "vscode") {
+      repository(owner: "kamranahmedse", name: "developer-roadmap") {
         issues(first: 10, after: %s) {
           nodes {
             title
