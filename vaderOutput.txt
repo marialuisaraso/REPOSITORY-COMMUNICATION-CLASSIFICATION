@@ -4,7 +4,7 @@ Update site-wide year-------------------------------------------- {'neg': 0.0, '
 Add sitemap and 404 page----------------------------------------- {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
 Refactor captcha validation-------------------------------------- {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
 Fix text language------------------------------------------------ {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
-I LOVE you------------------------------------------------------- {'neg': 0.0, 'neu': 0.288, 'pos': 0.712, 'compound': 0.7125}
+I love you------------------------------------------------------- {'neg': 0.0, 'neu': 0.323, 'pos': 0.677, 'compound': 0.6369}
 Thank you for doing this implementation-------------------------- {'neg': 0.0, 'neu': 0.667, 'pos': 0.333, 'compound': 0.3612}
 You got this all right!------------------------------------------ {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
 merge this into the main branch!Thank You!----------------------- {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
@@ -12,7 +12,10 @@ I will also complete one for 'backend' in similar manner and add it {'neg': 0.0,
 :)Thank you------------------------------------------------------ {'neg': 0.0, 'neu': 0.286, 'pos': 0.714, 'compound': 0.3612}
 Love the RoadMap, thank you for making it.----------------------- {'neg': 0.0, 'neu': 0.472, 'pos': 0.528, 'compound': 0.7717}
 I hate you!!----------------------------------------------------- {'neg': 0.682, 'neu': 0.318, 'pos': 0.0, 'compound': -0.6467}
-please NEVER do this again--------------------------------------- {'neg': 0.0, 'neu': 0.635, 'pos': 0.365, 'compound': 0.3182}
+please never do this again--------------------------------------- {'neg': 0.0, 'neu': 0.635, 'pos': 0.365, 'compound': 0.3182}
 You are the worst.----------------------------------------------- {'neg': 0.577, 'neu': 0.423, 'pos': 0.0, 'compound': -0.6249}
 What I don't like is the grey-coloured box----------------------- {'neg': 0.232, 'neu': 0.768, 'pos': 0.0, 'compound': -0.2755}
-
+this is terrible.------------------------------------------------ {'neg': 0.608, 'neu': 0.392, 'pos': 0.0, 'compound': -0.4767}
+you are so dumb-------------------------------------------------- {'neg': 0.586, 'neu': 0.414, 'pos': 0.0, 'compound': -0.6418}
+i told you.------------------------------------------------------ {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+your code is shit------------------------------------------------ {'neg': 0.545, 'neu': 0.455, 'pos': 0.0, 'compound': -0.5574}
