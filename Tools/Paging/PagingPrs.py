@@ -1,4 +1,4 @@
-import requests
+import requests, os
 
 def main():
   url = 'https://api.github.com/graphql'
@@ -8,7 +8,7 @@ def main():
       query = """
       query {
         repository(owner: "kamranahmedse", name: "developer-roadmap") {
-          pullRequests(first: 10, after: %s) {
+          pullRequests(first: 100, after: %s) {
             nodes {
               title
               body
@@ -33,11 +33,32 @@ def main():
       file.write(str(result))
 
   # Iteramos para obter as próximas páginas usando os cursores
-  while result['data']['repository']['pullRequests']['pageInfo']['hasNextPage']:
+  max_iter = 50
+  iter = 0
+  tmp_json = []
+  while result['data']['repository']['pullRequests']['pageInfo']['hasNextPage'] and iter < max_iter:
+      print("pagingPrs [{}/{}]".format(iter, max_iter))
+
+      iter += 1
       cursor = result['data']['repository']['pullRequests']['pageInfo']['endCursor']
       result = get_pull_requests(cursor)
+      nodes = result['data']['repository']['pullRequests']['nodes']
+      for node in nodes:
+        tmp_json.append(node)
+  print("end of while")
+  with open('Tools/Paging/outputs/prsOutput.txt', 'w') as file:
+      file.write(str(tmp_json))
 
-      with open('Tools/Paging/outputs/prsOutput.txt', 'a') as file:
-          file.write(str(result))
+  with open('Tools/Paging/output_final/prsOutput.txt', 'w') as file:
+     pass
 
-main()
+  for tmp in tmp_json:
+    with open('Tools/Paging/output_final/prsOutput.txt', 'a') as file:
+      tmp_text = str(tmp['body'])
+      tmp_text = tmp_text.replace('\n', '')
+      tmp_text = os.linesep.join([s for s in tmp_text.splitlines() if s])
+      tmp_text = tmp_text.replace('\n', '')
+      file.write(str(tmp_text) + '\n')
+
+
+# main()

@@ -1,4 +1,4 @@
-import requests
+import requests, os
 
 def main():
   url = 'https://api.github.com/graphql'
@@ -8,7 +8,7 @@ def main():
       query = """
       query {
         repository(owner: "kamranahmedse", name: "developer-roadmap") {
-          issues(first: 10, after: %s) {
+          issues(first: 100, after: %s) {
             nodes {
               title
               body
@@ -33,11 +33,31 @@ def main():
       file.write(str(result))
 
   # Iteramos para obter as próximas páginas usando os cursores
-  while result['data']['repository']['issues']['pageInfo']['hasNextPage']:
+  max_iter = 100
+  iter = 0
+  tmp_json = []
+  while result['data']['repository']['issues']['pageInfo']['hasNextPage'] and iter < max_iter:
+      print("pagingIssues [{}/{}]".format(iter, max_iter))
+
+      iter += 1
       cursor = result['data']['repository']['issues']['pageInfo']['endCursor']
       result = get_issues(cursor)
+      nodes = result['data']['repository']['issues']['nodes']
+      for node in nodes:
+        tmp_json.append(node)
+  print("end of while")
+  with open('Tools/Paging/outputs/issuesOutput.txt', 'w') as file:
+      file.write(str(tmp_json))
 
-      with open('Tools/Paging/outputs/issuesOutput.txt', 'a') as file:
-          file.write(str(result))
+  with open('Tools/Paging/output_final/issuesOutput.txt', 'w') as file:
+     pass 
 
-main()
+
+  for tmp in tmp_json:
+    with open('Tools/Paging/output_final/issuesOutput.txt', 'a') as file:
+      tmp_text = str(tmp['body'])
+      tmp_text = tmp_text.replace('\n', '')
+      tmp_text = os.linesep.join([s for s in tmp_text.splitlines() if s])
+      tmp_text = tmp_text.replace('\n', '')
+
+      file.write(str(tmp_text) + '\n')

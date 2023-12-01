@@ -4,21 +4,25 @@ from Paging import PagingPrs
 import json
 from json import dumps
 
-def issuesJson():
-    with open('issuesResults.json', 'w') as arquivo1:
-        arquivo1.write(json.dumps(PagingIssues.main(), sort_keys=True, indent=4))
-        arquivo1.close()
 
-def commitsJson():
-    with open('commitsResults.json', 'w') as arquivo2:
-        arquivo2.write(json.dumps(PagingCommits.main(), sort_keys=True, indent=4))
-        arquivo2.close()
 
-def prsJson():
-    with open('prsResults.json', 'w') as arquivo3:
-        arquivo3.write(json.dumps(PagingPrs.main(), sort_keys=True, indent=4))
-        arquivo3.close()
+PagingIssues.main()
+PagingCommits.main()
+PagingPrs.main()
 
-issuesJson()
-commitsJson()
-prsJson()
+
+# with open('Tools/Paging/output_final/prsOutput.txt', 'a') as file:
+#     with open('Tools/Paging/output_final/issuesOutput.txt', 'a') as file:
+#     with open('Tools/Paging/output_final/commitsOutput.txt', 'a') as file:
+# agroup all in finalOutput.txt
+with open('Tools/Paging/output_final/commitsOutput.txt', 'r') as file:
+    commits_data = file.read()
+with open('Tools/Paging/output_final/issuesOutput.txt', 'r') as file:
+    issues_data = file.read()
+with open('Tools/Paging/output_final/prsOutput.txt', 'r') as file:
+    prs_data = file.read()
+
+with open('Tools/Paging/output_final/finalOutput.txt', 'w') as file:
+    file.write(commits_data)
+    file.write(issues_data)
+    file.write(prs_data)
