@@ -515,7 +515,7 @@ class SentimentIntensityAnalyzer(object):
 def Vader():
 
     # Nome do arquivo de texto
-    file_name = "Tools/Paging/output_final/finalOutput.txt"
+    file_name = "testeTCC1.txt"
 
     # Inicialize um vetor vazio para armazenar as frases
     sentences = []
