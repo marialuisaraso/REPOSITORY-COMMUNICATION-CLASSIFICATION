@@ -1,3 +1,117 @@
+Fix Minor Punctuations (#4826)
+Fix Service Discovery Link (#4827)
+Fix Polynomial Time Complexity (#4836)
+Fix Content Heading (#4850)Fixing Typos: Heading was wrong.
+Fix Heap Typo (#4851)
+Fix Content Grammar Typo (#4854)I made a slight modification to improve the clarity of the sentence.Specifically, I changed:"Make sure to follow the instructions provided by the editor's documentation to set up C++ correctly."to:"Make sure to follow the instructions provided in the editor's documentation to set up C++ correctly."This change maintains the same meaning but improves the flow of the sentence.
+Update database section to focus on scaling databases (#4843)
+Update session-based-authentication.md (#4844)
+Update backend roadmap JSON
+Upgrade dependencies
+Update backend roadmap
+Add embed roadmap functionalityg
+Flutter : update 100-material-widgets.md (#4824)'RaisedButton' is deprecated and shouldn't be used. It is replaced by ElevatedButton
+Add embed functionality
+Add content for AWS roadmap
+Add roadmap dirs for AWS
+Add AWS roadmap
+Add DDD resources (#4765)
+Add resource for DDOS (#4776)cyber-security-ddos-link-updated
+Remove redundant link (#4777)roadmap-javascript-built-in-object-redundant-linkfixes: #4758
+Add resource for np completness (#4778)roadmap-computer-science-np-complete-new-video-link-providedfixes: #4731
+Add backpressure resource (#4779)
+Update Top Python Asynchronous Web Frameworks (#4766)The number changed from 5 to 9 in the original article.
+Update backend service mesh description (#4752)
+Update Next.js resource (#4750)Updated to latest video of NextJS from freecodecamp in Forntend RoadMap
+Fix invalid URL (#4747)
+Add zilliz logo
+Update embed logo
+Allow embedding of roadmaps
+Add course for linear algebra (#4703)* Update 100-linear-algebra.mdKimberly Brehm's Linear Algebra Course> Matrices: Properties, operations, and applications.> Determinants: Role in system solvability and transformations.> Vectors: Geometric interpretation and relevance in     transformations.Eigenvalues & Eigenvectors: Stability and system analysis.This course lays a solid foundation for game development. Matrices and vectors are core elements in creating graphics, handling transformations, and optimizing game performance. Understanding determinants aids in solving complex problems, while eigenvalues/eigenvectors are crucial for stability in game mechanics. Focus on matrices, vectors, and transformations for practical game design applications.* Update src/data/roadmaps/game-developer/content/101-game-mathematics/100-linear-algebra.md---------Co-authored-by: Kamran Ahmed <kamranahmed.se@gmail.com>
+Update 101-app-shortcuts.md (#4705)Removed unnecessary chatgpt line.
+Add Fullstack Deep Learning to MLOps (#4698)
+Update contribution functionality
+Topic links contribution functionality
+Add axum
+Add link to rust roadmap
+Add rust roadmap
+Add rust roadmap
+Fixed the links not working (#4677)
+Add favorite functionality
+Abdelrhman: Fix best practices articles (#4680)* Fix gtx-trans close sidepanel* reset the package-lock.json file* Install the CodeSee workflow. Learn more at https://docs.codesee.io* Fix Best Practcies roadmaps articels* Restore files---------Co-authored-by: codesee-maps[bot] <86324825+codesee-maps[bot]@users.noreply.github.com>
+UI fix for friends page
+Partial usage in the topics
+Fix images not working in latest astro (#4676)* Fix respond invite* Team roadmap icon fix* Personal roadmap list and empty friends* Fix invite friend* Fix user progress modal* Friends and notification pages* Friends and notification pages* Update* Fix progress modal---------Co-authored-by: Arik Chakma <arikchangma@gmail.com>
+Update images
+Roadmap action dropdown fix
+Merge branch 'images-fix' of https://github.com/kamranahmedse/developer-roadmap into images-fix
+Fix verify letter
+Team sidebar fix
+Select roadmap modal fix
+Team icons fix
+Fix trigger verify page
+Fix page progress
+Merge branch 'images-fix' of https://github.com/kamranahmedse/developer-roadmap into images-fix
+Fix roadmap page
+Command menu icons
+Fix login buttons
+Github icon fix
+Update dependencies
+Update renderer
+Rename deployment
+Downgrade dependencies
+Add link to technical writer roadmap
+Update twitter icon in sharing button
+Update twitter icon and progress nudge
+Add progress nudge on roadmap
+Update technical writer reference link
+Add content for technical writer roadmap
+Add technical writer roadmap
+Fix broken `Electron` tutorial link (#4589)frontend-roadmap-javascript-electron URL fixedfixes : #4587
+updated new twitter logo (#4659)
+UI change for sharing button
+Add DevOps forkable (#4638)
+Change twitter share button text
+Add sharing buttons in header
+Fix ui issue
+Add link to server side game developer roadmap
+Add server side game developer roadmap
+Add server side game developer roadmap
+Fix issue with chrome v83
+Add forkable Backend Roadmap (#4635)* Add forkable Backend roadmap* Add `(Fork)` at title
+Fix URL for http caching
+Update twitter link
+Update meta titles
+Add game developer roadmap
+Add content for game developer roadmap
+Add game developer roadmap
+Feat auto-focused side panel (#4631)* Fix gtx-trans close sidepanel* reset the package-lock.json file* Feat: Add auto focus to side panels* resote changes
+Open roadmap editor in same window
+Add scalability article
+fix: broken link to scalability in system design (#4616)
+Allow creating personal version of frontend roadmap (#4627)* Create Roadmap Version* Change button position* Update frontend JSON* Remove `topicCount`* Add fork at title* Update UI for create your own version* Add functionality to load your own version* Load user version of roadmap* Update forkable roadmap---------Co-authored-by: Kamran Ahmed <kamranahmed.se@gmail.com>
+Clarify Usage of MongoDB's $currentDate operator (#4630)* Fix gtx-trans close sidepanel* reset the package-lock.json file* Fix: mongoDB date type
+Fix mongodb optimization section (#4629)* Fix gtx-trans close sidepanel* reset the package-lock.json file* Fix: Performance Optimization* Restore src/components/TopicDetail/TopicProgressButton.tsx file
+Add related questions below roadmaps
+Add content for android
+Create files for android roadmap
+Update android roadmap
+Fix: google translate extenstion close side panel (#4625)* Fix gtx-trans close sidepanel* reset the package-lock.json file
+Update dependencies
+Update dependencies
+Roadmap action button color
+Remove web-draw package
+Refactor to fix editor scaling issues (#4618)* Ignore editor file* Integrate Readonly Editor* Remove logs* Implement minimum height* Implement Custom Roadmap Modal* Implement Custom Roadmap progress modal* Implement Readonly Editor* Implement utils* Update `gitignore`* Fix generate renderer script* Refactor UI* Add Empty Roadmap state* Upgrade dependencies and editor update* Update deployment workflow* Update roadmap header* Update dependencies* Refactor Readonly editor* Add Readonly Dummy Editor* Add editor to gitignore* Add Assume Unchanged* Add editor in the tailwind* Fix tailwind issue* Fix URL for add friends* Add share with friends functionality* Update workflow---------Co-authored-by: Arik Chakma <arikchangma@gmail.com>
+Minor Improvement for Custom Roadmap (#4590)* Add Edit button in the roadmap list* Add share with others button* Fix editor link
+Sponsor for nginx
+Account dropdown changes
+Add links to questions
+Add links to questions
+add roadmap editor image
+Add JavaScript questions (#4505)* Add Javascript questions* wip: add more questions* wip: add ternary operator* wip: add more questions* wip: add more questions* wip: add more questions* wip: add more questions* fix: set example* wip: add more questions* wip: add more question* wip: add more questions* wip: add more questions* wip: add more questions* wip: add more questions* wip: add more questions* wip: add more questions* wip: add more questions* wip: add another question* wip: add more questions* wip: add more questions* wip: add more questions* wip: add more questions* wip: add more questions* wip: add more questions* wip: add more questions* wip: add more questions
+Spring testing link fix
+Fix typo on teams page
+Discovery page option in sharing
 isDiscoverable not persisted
 Discoverable option selection
 Update share buttons text

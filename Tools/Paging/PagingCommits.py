@@ -1,73 +1,85 @@
-import requests, os
+import requests
+import os
 
 def main():
-  url = 'https://api.github.com/graphql'
-  headers = {'Authorization': 'Bearer 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'}
+    # Lista de tokens de autenticação
+    tokens = ['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', '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', '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', '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']  # Adicione quantos tokens desejar
+    url = 'https://api.github.com/graphql'
 
-  def get_commits(cursor=None):
-      query = """
-      query {
-        repository(owner: "kamranahmedse", name: "developer-roadmap") {
-          ref(qualifiedName: "master") {
-            target {
-              ... on Commit {
-                history(first: 100, after: %s) {
-                  nodes {
-                    oid
-                    message
-                  }
-                  pageInfo {
-                    endCursor
-                    hasNextPage
+    def get_commits(cursor=None):
+        query = """
+        query {
+          repository(owner: "microsoft", name: "vscode") {
+            ref(qualifiedName: "master") {
+              target {
+                ... on Commit {
+                  history(first: 100, after: %s) {
+                    nodes {
+                      oid
+                      message
+                    }
+                    pageInfo {
+                      endCursor
+                      hasNextPage
+                    }
                   }
                 }
               }
             }
           }
         }
-      }
-      """ % (f'"{cursor}"' if cursor else "null")
+        """ % (f'"{cursor}"' if cursor else "null")
 
-      response = requests.post(url, json={'query': query}, headers=headers)
-      return response.json()
+        # Alternar entre os tokens de autenticação
+        for token in tokens:
+            headers = {'Authorization': f'Bearer {token}'}
+            response = requests.post(url, json={'query': query}, headers=headers)
+            if response.status_code == 200:
+                return response.json()
 
-  # Inicialmente, obtemos os primeiros 10 commits sem cursor
-  result = get_commits()
+        # Se nenhum token funcionar, retornar None
+        return None
 
-  with open('Tools/Paging/outputs/commitsOutput.txt', 'w') as file:
-      # Escrevemos os resultados no arquivo
-      file.write(str(result))
+    # Inicialmente, obtemos os primeiros 10 commits sem cursor
+    result = get_commits()
 
-  # Iteramos para obter as próximas páginas usando os cursores
-  # Iteramos para obter as próximas páginas usando os cursores
-  max_iter = 50
-  iter = 0
-  tmp_json = []
-  while result['data']['repository']['ref']['target']['history']['pageInfo']['hasNextPage'] and iter < max_iter:
-      print("pagingCommits [{}/{}]".format(iter, max_iter))
-      iter += 1
-      cursor = result['data']['repository']['ref']['target']['history']['pageInfo']['endCursor']
-      result = get_commits(cursor)
-      nodes = result['data']['repository']['ref']['target']['history']['nodes']
-      for node in nodes:
-        tmp_json.append(node)
-  print("end of while")
-  with open('Tools/Paging/outputs/commitsOutput.txt', 'w') as file:
-      file.write(str(tmp_json))
+    if result is not None:
+        tmp_json = []
+        with open('Tools/Paging/outputs/commitsOutput.txt', 'w') as file:
+            # Escrevemos os resultados no arquivo
+            file.write(str(result))
+
+        # Iteramos para obter as próximas páginas usando os cursores
+        max_iter = 5000000
+        iter = 0
+        while result['data']['repository']['ref']['target']['history']['pageInfo']['hasNextPage'] and iter < max_iter:
+            print("pagingCommits [{}/{}]".format(iter, max_iter))
+            iter += 1
+            cursor = result['data']['repository']['ref']['target']['history']['pageInfo']['endCursor']
+            result = get_commits(cursor)
+            if result is not None:
+                nodes = result['data']['repository']['ref']['target']['history']['nodes']
+                for node in nodes:
+                    tmp_json.append(node)
+            else:
+                break
+
+        with open('Tools/Paging/outputs/commitsOutput.txt', 'w') as file:
+            file.write(str(tmp_json))
+
+        with open('Tools/Paging/output_final/commitsOutput.txt', 'w') as file:
+            pass
+
+        for tmp in tmp_json:
+            with open('Tools/Paging/output_final/commitsOutput.txt', 'a') as file:
+                tmp_text = str(tmp['message'])
+                tmp_text = tmp_text.replace('\n', '')
+                tmp_text = os.linesep.join([s for s in tmp_text.splitlines() if s])
+                tmp_text = tmp_text.replace('\n', '')
+                file.write(str(tmp_text) + '\n')
+    else:
+        print("Erro de autenticação.")
 
 
-  with open('Tools/Paging/output_final/commitsOutput.txt', 'w') as file:
-    pass
-
-
-  for tmp in tmp_json:
-    with open('Tools/Paging/output_final/commitsOutput.txt', 'a') as file:
-      tmp_text = str(tmp['message'])
-      tmp_text = tmp_text.replace('\n', '')
-      tmp_text = os.linesep.join([s for s in tmp_text.splitlines() if s])
-      tmp_text = tmp_text.replace('\n', '')
-
-      file.write(str(tmp_text) + '\n')
-  
-
-# main()
+if __name__ == "__main__":
+    main()
