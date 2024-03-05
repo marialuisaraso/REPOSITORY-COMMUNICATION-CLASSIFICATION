@@ -1,3 +1,5 @@
+Fix Angular Roadmap Type Guard video URL (#4800)
+Update Duplicate Link (#4819)The first link now 'Control Flow Statements' just sends to the the third link for 'Branches', so it's just a duplicate now.
 Fix Minor Punctuations (#4826)
 Fix Service Discovery Link (#4827)
 Fix Polynomial Time Complexity (#4836)
