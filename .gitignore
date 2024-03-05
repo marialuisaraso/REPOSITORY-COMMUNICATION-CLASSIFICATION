@@ -136,3 +136,8 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+Tools/Paging/output_final/prsOutput.txt
+Tools/Paging/output_final/issuesOutput.txt
+Tools/Paging/outputs/commitsOutput.txt
+Tools/Paging/outputs/issuesOutput.txt
+Tools/Paging/outputs/prsOutput.txt
