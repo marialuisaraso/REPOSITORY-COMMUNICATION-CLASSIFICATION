@@ -9,7 +9,7 @@ def main():
     def get_pull_requests(cursor=None, token=None):
       query = """
       query {
-        repository(owner: "kamranahmedse", name: "developer-roadmap") {
+        repository(owner: "microsoft", name: "vscode") {
           pullRequests(first: 100, after: %s) {
             nodes {
               title
