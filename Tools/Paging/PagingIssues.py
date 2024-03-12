@@ -14,6 +14,14 @@ def main():
               nodes {
                 title
                 body
+                comments(first: 100) {
+                  nodes {
+                    author {
+                      login
+                    }
+                    body
+                  }
+                }
               }
               pageInfo {
                 endCursor
@@ -23,6 +31,7 @@ def main():
           }
         }
         """ % (f'"{cursor}"' if cursor else "null")
+
 
         # Alternar entre os tokens de autenticação
         headers = {'Authorization': f'Bearer {token}'}

@@ -17,6 +17,14 @@ def main():
                     nodes {
                       oid
                       message
+                      comments(first: 100) {
+                        nodes {
+                          author {
+                            login
+                          }
+                          body
+                        }
+                      }
                     }
                     pageInfo {
                       endCursor
