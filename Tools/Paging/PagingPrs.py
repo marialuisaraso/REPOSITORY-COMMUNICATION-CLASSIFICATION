@@ -14,6 +14,11 @@ def main():
             nodes {
               title
               body
+              comments(first: 100) {
+                nodes {
+                  body
+                }
+              }
             }
             pageInfo {
               endCursor
