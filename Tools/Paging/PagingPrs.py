@@ -50,7 +50,7 @@ def main():
         max_iter = 1200
         iter = 0
         while result['data']['repository']['pullRequests']['pageInfo']['hasNextPage'] and iter < max_iter:
-            print("pagingCommits [{}/{}]".format(iter, max_iter))
+            print("pagingPrs [{}/{}]".format(iter, max_iter))
             iter += 1
             cursor = result['data']['repository']['pullRequests']['pageInfo']['endCursor']
             
