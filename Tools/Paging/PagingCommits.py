@@ -18,6 +18,7 @@ def main():
                       oid
                       message
                       comments(first: 100) {
+                        totalCount
                         nodes {
                           author {
                             login
@@ -86,6 +87,8 @@ def main():
                 tmp_text = os.linesep.join([s for s in tmp_text.splitlines() if s])
                 tmp_text = tmp_text.replace('\n', '')
                 file.write(str(tmp_text) + '\n')
+            with open('Tools/Graphics/commitsComments.txt', 'a') as file2:
+                file2.write("Total de Comentários: " + str(tmp['comments']['totalCount']) + '\n')  # Adiciona a contagem de comentários
     else:
         print("Erro de autenticação.")
 
