@@ -15,6 +15,7 @@ def main():
                 title
                 body
                 comments(first: 100) {
+                  totalCount
                   nodes {
                     author {
                       login
@@ -41,17 +42,17 @@ def main():
         # Se nenhum token funcionar, retornar None
         return None
 
-    # Inicialmente, obtemos os primeiros 10 commits sem cursor
+    # Inicialmente, obtemos os primeiros 10 comits sem cursor
     result = get_issues(None, tokens[0])
 
     if result is not None:
         tmp_json = []
-        with open('Tools/Paging/outputs/commitsOutput.txt', 'w') as file:
+        with open('Tools/Paging/outputs/issuesOutput.txt', 'w') as file:
             # Escrevemos os resultados no arquivo
             file.write(str(result))
 
         # Iteramos para obter as próximas páginas usando os cursores
-        max_iter = 1200
+        max_iter = 3000
         iter = 0
         while result['data']['repository']['issues']['pageInfo']['hasNextPage'] and iter < max_iter:
             print("pagingIssues [{}/{}]".format(iter, max_iter))
@@ -81,6 +82,8 @@ def main():
                 tmp_text = os.linesep.join([s for s in tmp_text.splitlines() if s])
                 tmp_text = tmp_text.replace('\n', '')
                 file.write(str(tmp_text) + '\n')
+            with open('Tools/Graphics/issuesComments.txt', 'a') as file2:
+                file2.write("Total de Comentários: " + str(tmp['comments']['totalCount']) + '\n')  # Adiciona a contagem de comentários
     else:
         print("Erro de autenticação.")
 
