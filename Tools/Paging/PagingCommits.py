@@ -57,7 +57,7 @@ def main():
             file.write(str(result))
 
         # Iteramos para obter as próximas páginas usando os cursores
-        max_iter = 1200
+        max_iter = 3000
         iter = 0
         while result['data']['repository']['ref']['target']['history']['pageInfo']['hasNextPage'] and iter < max_iter:
             print("pagingCommits [{}/{}]".format(iter, max_iter))
@@ -87,8 +87,6 @@ def main():
                 tmp_text = os.linesep.join([s for s in tmp_text.splitlines() if s])
                 tmp_text = tmp_text.replace('\n', '')
                 file.write(str(tmp_text) + '\n')
-            with open('Tools/Graphics/commitsComments.txt', 'a') as file2:
-                file2.write("Total de Comentários: " + str(tmp['comments']['totalCount']) + '\n')  # Adiciona a contagem de comentários
     else:
         print("Erro de autenticação.")
 
