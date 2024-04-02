@@ -21,6 +21,5 @@ dados['Valores'] = np.log10(dados['Valores'])
 
 # Gerar o gráfico boxplot usando Seaborn
 sns.boxplot(data=dados)
-plt.title('Boxplot dos Valores (em Log10)')
-plt.xlabel('Valores (em Log10)')
+plt.title('COMENTÁRIOS POR ISSUE (EM LOG)')
 plt.show()
