@@ -515,7 +515,7 @@ class SentimentIntensityAnalyzer(object):
 def Vader():
 
     # Nome do arquivo de texto
-    file_name = "testeTCC1.txt"
+    file_name = "Tools/Paging/output_final/issuesOutput.txt"
 
     # Inicialize um vetor vazio para armazenar as frases
     sentences = []
@@ -538,7 +538,7 @@ def Vader():
     with open("vaderOutput.txt", "w") as file:
         for sentence in sentences:
             vs = analyzer.polarity_scores(sentence)
-            file.write("{:-<65} {}\n".format(sentence, str(vs)))
+            file.write(str(vs) + "\n")
     print("----------------------------------------------------")
     print(" - About the scoring: ")
     print("""  -- The 'compound' score is computed by summing the valence scores of each word in the lexicon, adjusted

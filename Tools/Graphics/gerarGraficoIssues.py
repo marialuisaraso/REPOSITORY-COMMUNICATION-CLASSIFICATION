@@ -1,6 +1,7 @@
-#QUANTIDADE DE COMENTARIOS POR ISSUE
 import pandas as pd
-from ggplot import *
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
 
 # Ler o arquivo texto e carregar os dados em um DataFrame do pandas
 def ler_arquivo(nome_arquivo):
@@ -9,18 +10,17 @@ def ler_arquivo(nome_arquivo):
     valores = [float(linha.strip()) for linha in linhas]
     return pd.DataFrame({'Valores': valores})
 
-# Função para gerar o gráfico boxplot
-def gerar_boxplot(dados):
-    return ggplot(aes(x='1'), data=dados) + geom_boxplot()
-
 # Nome do arquivo de entrada
-nome_arquivo = 'dados.txt'
+nome_arquivo = 'Tools/Graphics/issuesComments.txt'
 
 # Ler os dados do arquivo
 dados = ler_arquivo(nome_arquivo)
 
-# Gerar o gráfico boxplot
-grafico = gerar_boxplot(dados)
+# Aplicar logaritmo aos valores
+dados['Valores'] = np.log10(dados['Valores'])
 
-# Exibir o gráfico
-print(grafico)
+# Gerar o gráfico boxplot usando Seaborn
+sns.boxplot(data=dados)
+plt.title('Boxplot dos Valores (em Log10)')
+plt.xlabel('Valores (em Log10)')
+plt.show()
