@@ -1,8 +1,8 @@
 from Vader.Vader.vaderSentiment import Vader
 
 def main():
-    print("ANÁLISE DE SENTIMENTOS EM REPÓSITÓRIO MINERADO DO GITHUB")
-    escolha = input("DIGITE 1 PARA DISPARAR A ANÁLISE DE SENTIMENTOS: ")
+    print("A Global Communication Tone Index for Github's Open Source Repositories")
+    escolha = input("Press 1 to generate the Index: ")
 
     if escolha == "1":
         Vader()
