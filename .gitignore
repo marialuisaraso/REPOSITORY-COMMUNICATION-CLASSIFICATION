@@ -144,3 +144,7 @@ Tools/Paging/outputs/prsOutput.txt
 vaderOutput.txt
 Tools/Graphics/issuesComments.txt
 Tools/Graphics/prsComments.txt
+commitsVaderOutput.txt
+prsVaderOutput.txt
+issuesVaderOutput.txt
+Tools/Paging/output_final/commitsOutput.txt
