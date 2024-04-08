@@ -18,7 +18,6 @@ def main():
                       oid
                       message
                       comments(first: 100) {
-                        totalCount
                         nodes {
                           author {
                             login

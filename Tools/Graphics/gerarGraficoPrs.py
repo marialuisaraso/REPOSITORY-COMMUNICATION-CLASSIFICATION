@@ -8,7 +8,7 @@ def ler_arquivo(nome_arquivo):
     with open(nome_arquivo, 'r') as arquivo:
         linhas = arquivo.readlines()
     valores = [float(linha.strip()) for linha in linhas]
-    return pd.DataFrame({'Valores': valores})
+    return pd.DataFrame({'Values': valores})
 
 # Nome do arquivo de entrada
 nome_arquivo = 'Tools/Graphics/prsComments.txt'
@@ -17,9 +17,9 @@ nome_arquivo = 'Tools/Graphics/prsComments.txt'
 dados = ler_arquivo(nome_arquivo)
 
 # Aplicar logaritmo aos valores
-dados['Valores'] = np.log10(dados['Valores'])
+dados['Values'] = np.log10(dados['Values'])
 
 # Gerar o gráfico boxplot usando Seaborn
 sns.boxplot(data=dados)
-plt.title('COMENTÁRIOS POR PR (EM LOG)')
+plt.title('COMMENTS PER PULL REQUEST (LOG NOTATION)')
 plt.show()

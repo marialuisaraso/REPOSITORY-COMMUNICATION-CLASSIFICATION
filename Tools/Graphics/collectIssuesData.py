@@ -41,10 +41,6 @@ def main():
 
     if result is not None:
         tmp_json = []
-        with open('Tools/Paging/outputs/issuesOutput.txt', 'w') as file:
-            # Escrevemos os resultados no arquivo
-            file.write(str(result))
-
         # Iteramos para obter as próximas páginas usando os cursores
         max_iter = 3000
         iter = 0
@@ -63,19 +59,7 @@ def main():
             else:
                 break
 
-        with open('Tools/Paging/outputs/issuesOutput.txt', 'w') as file:
-            file.write(str(tmp_json))
-
-        with open('Tools/Paging/output_final/issuesOutput.txt', 'w') as file:
-            pass
-
         for tmp in tmp_json:
-            with open('Tools/Paging/output_final/issuesOutput.txt', 'a') as file:
-                tmp_text = str(tmp['body'])
-                tmp_text = tmp_text.replace('\n', '')
-                tmp_text = os.linesep.join([s for s in tmp_text.splitlines() if s])
-                tmp_text = tmp_text.replace('\n', '')
-                file.write(str(tmp_text) + '\n')
             with open('Tools/Graphics/issuesComments.txt', 'a') as file2:
                 file2.write(str(tmp['comments']['totalCount']) + "\n")  # Adiciona a contagem de comentários
     else:

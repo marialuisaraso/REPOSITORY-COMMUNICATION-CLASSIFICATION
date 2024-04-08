@@ -16,6 +16,7 @@ def main():
               body
               comments(first: 100) {
                 totalCount
+              }
             }
             pageInfo {
               endCursor
@@ -58,7 +59,7 @@ def main():
                 break
 
         for tmp in tmp_json:
-            with open('Tools/Graphics/issuesComments.txt', 'a') as file2:
+            with open('Tools/Graphics/prsComments.txt', 'a') as file2:
                 file2.write(str(tmp['comments']['totalCount']) + "\n")  # Adiciona a contagem de comentários
     else:
         print("Erro de autenticação.")
