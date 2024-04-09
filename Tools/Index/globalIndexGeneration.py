@@ -79,30 +79,16 @@ nome_arquivo_entrada3 = "prsVaderOutput.txt"
 # Processar o arquivo de entrada
 final_index_score1 = processar_arquivo_entrada1(nome_arquivo_entrada1)
 final_index_score1 = final_index_score1 / 708887
-print("ISSUES INDEX:", final_index_score1)
+print("\n ISSUES INDEX:", final_index_score1, "\n")
 final_index_score2 = processar_arquivo_entrada2(nome_arquivo_entrada2)
 final_index_score2 = final_index_score2 / 126168
-print("COMMITS INDEX:", final_index_score2)
+print("COMMITS INDEX:", final_index_score2, "\n")
 final_index_score3 = processar_arquivo_entrada3(nome_arquivo_entrada3)
 final_index_score3 = final_index_score3 / 47774
-print("PRS INDEX:", final_index_score3)
+print("PRS INDEX:", final_index_score3, "\n")
 
 final_index_score_general = final_index_score3 + final_index_score2 + final_index_score1
-print("GLOBAL INDEX:", final_index_score_general)
-# if(2 < final_index_score_general <= 3):
-#     print("THE PROJECT COMMUNICATION IS SUPER POSITIVE")
-# if(1 < final_index_score_general <= 2):
-#     print("THE PROJECT COMMUNICATION IS POSITIVE")
-# if(0.5 < final_index_score_general <= 1):
-#     print("THE PROJECT COMMUNICATION IS NEUTRAL POSITIVE")
-# if(-0.5 < final_index_score_general <= 0.5):
-#     print("THE PROJECT COMMUNICATION IS NEUTRAL")
-# if(0,5 < final_index_score_general >= -1):
-#     print("THE PROJECT COMMUNICATION IS NEUTRAL NEGATIVE")
-# if(-2 >= final_index_score_general > -1):
-#     print("THE PROJECT COMMUNICATION IS NEGATIVE")
-# if(-3 >= final_index_score_general > -2):
-#     print("THE PROJECT COMMUNICATION IS SUPER NEGATIVE")
+print("GLOBAL INDEX:", final_index_score_general, "\n")
 
 def classificar_valor(x):
     if x >= -3 and x < -2:
@@ -124,4 +110,4 @@ def classificar_valor(x):
 
 # Exemplo de uso
 classificacao = classificar_valor(final_index_score_general)
-print(f"INDEX {final_index_score_general} IS INSIDE {classificacao} INTERVAL.")
+print(f"GLOBAL INDEX {final_index_score_general} IS INSIDE {classificacao} INTERVAL. \n")
