@@ -10,6 +10,8 @@ def extrair_e_somar_ultimo_numero1(linha):
         ultimo_numero1 = 0
         # Pegar somente o último número
         ultimo_numero1 = float(numeros1[-1])
+        with open('Tools/Index/compounds.txt', 'a') as file2:
+            file2.write(str(ultimo_numero1) + "\n")
         return ultimo_numero1
     else:
         return 0.0  # Retorna 0 se nenhum número for encontrado na linha
@@ -24,6 +26,8 @@ def extrair_e_somar_ultimo_numero2(linha):
         ultimo_numero2 = 0
         # Pegar somente o último número
         ultimo_numero2 = float(numeros2[-1])
+        with open('Tools/Index/compounds.txt', 'a') as file2:
+            file2.write(str(ultimo_numero2) + "\n")
         return ultimo_numero2
     else:
         return 0.0  # Retorna 0 se nenhum número for encontrado na linha
@@ -38,6 +42,8 @@ def extrair_e_somar_ultimo_numero3(linha):
         ultimo_numero3 = 0
         # Pegar somente o último número
         ultimo_numero3 = float(numeros3[-1])
+        with open('Tools/Index/compounds.txt', 'a') as file2:
+            file2.write(str(ultimo_numero3) + "\n")
         return ultimo_numero3
     else:
         return 0.0  # Retorna 0 se nenhum número for encontrado na linha
