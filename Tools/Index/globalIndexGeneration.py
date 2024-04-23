@@ -79,5 +79,5 @@ final_index_score3 = process_input_3(input_file_3)
 final_index_score3 = final_index_score3 / 5014
 print("PRS INDEX:", final_index_score3, "\n")
 
-final_index_score_general = final_index_score3 + final_index_score2 + final_index_score1
-print("GLOBAL INDEX:", final_index_score_general, "\n")
+final_index_score_general = (final_index_score3) + (final_index_score2*3) + (final_index_score1*2) # WEIGHTS: 2 FOR ISSUES, 3 FOR COMMITS, 1 FOR PULL REQUESTS
+print("GLOBAL INDEX:", final_index_score_general/6, "\n") # SCORE DIVIDED BY 6 (SUM OF WEIGHTS)- WEIGHTED AVERAGE
