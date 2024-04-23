@@ -515,7 +515,7 @@ class SentimentIntensityAnalyzer(object):
 def Vader():
 
     # Nome do arquivo de texto
-    file_name = "Tools/Paging/output_final/prsOutput.txt"
+    file_name = "Tools/Paging/output_final/MIRRORcommitsOutput.txt"
 
     # Inicialize um vetor vazio para armazenar as frases
     sentences = []
@@ -535,7 +535,7 @@ def Vader():
 
     analyzer = SentimentIntensityAnalyzer()
 
-    with open("prsVaderOutput.txt", "w") as file:
+    with open("MIRRORcommitsVaderOutput.txt", "w") as file:
         for sentence in sentences:
             vs = analyzer.polarity_scores(sentence)
             file.write(str(vs) + "\n")

@@ -2,14 +2,13 @@ import requests
 import os
 
 def main():
-    # Lista de tokens de autenticação
-    tokens = ['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', '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', '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', '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']  # Adicione quantos tokens desejar
+    tokens = ['', '', '', '']  # ADD YOUR TOKENS
     url = 'https://api.github.com/graphql'
 
     def get_issues(cursor=None, token=None):
         query = """
         query {
-          repository(owner: "microsoft", name: "vscode") {
+          repository(owner: "codemirror", name: "codemirror5") {
             issues(first: 100, after: %s) {
               nodes {
                 title
@@ -33,24 +32,19 @@ def main():
         """ % (f'"{cursor}"' if cursor else "null")
 
 
-        # Alternar entre os tokens de autenticação
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.post(url, json={'query': query}, headers=headers)
         if response.status_code == 200:
             return response.json()
-        # Se nenhum token funcionar, retornar None
         return None
 
-    # Inicialmente, obtemos os primeiros 10 comits sem cursor
     result = get_issues(None, tokens[0])
 
     if result is not None:
         tmp_json = []
         with open('Tools/Paging/outputs/issuesOutput.txt', 'w') as file:
-            # Escrevemos os resultados no arquivo
             file.write(str(result))
 
-        # Iteramos para obter as próximas páginas usando os cursores
         max_iter = 3000
         iter = 0
         while result['data']['repository']['issues']['pageInfo']['hasNextPage'] and iter < max_iter:
@@ -82,7 +76,7 @@ def main():
                 tmp_text = tmp_text.replace('\n', '')
                 file.write(str(tmp_text) + '\n')
     else:
-        print("Erro de autenticação.")
+        print("AUTHENTICATION ERROR.")
 
 
 if __name__ == "__main__":
