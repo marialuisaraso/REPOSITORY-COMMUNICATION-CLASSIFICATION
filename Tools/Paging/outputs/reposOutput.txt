@@ -1,0 +1,1 @@
+{'errors': [{'type': 'EXCESSIVE_PAGINATION', 'path': ['search'], 'locations': [{'line': 3, 'column': 7}], 'message': 'Requesting 1000 records on the `search` connection exceeds the `first` limit of 100 records.'}]}

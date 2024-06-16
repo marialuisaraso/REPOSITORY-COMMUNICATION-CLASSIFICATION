@@ -2,9 +2,8 @@ import requests
 import os
 
 def main():
-    tokens = ['', '', '', '']  # ADD YOUR TOKENS
+    tokens = ['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', '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', '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', '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']  # Adicione quantos tokens desejar    
     url = 'https://api.github.com/graphql'
-
     def get_commits(cursor=None, token=None):
         query = """
         query {
